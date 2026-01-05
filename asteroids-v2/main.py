@@ -13,6 +13,10 @@ def main():
     #creating display area
     screen = pygame.display.set_mode((width,height))
 
+    #creating clock and variable
+    clock = pygame.time.Clock()
+    dt = 0
+
     while True:
         #Calling LogState
         log_state()
@@ -27,6 +31,10 @@ def main():
 
         #flip refreshes screen
         pygame.display.flip()
+
+        #Doing Clock Ticks
+        dt = clock.tick(60)/1000
+        #print(dt)
     print(f'Starting Asteroids with pygame version: {version}')
     print(f'Screen width: {width}')
     print(f'Screen height: {height}')
