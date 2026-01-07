@@ -34,7 +34,7 @@ def main():
 
         #Filling screen with black
         screen.fill("black")
-
+        player.update(dt)
         player.draw(screen)
 
         #flip refreshes screen
