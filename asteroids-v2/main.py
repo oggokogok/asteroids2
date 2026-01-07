@@ -17,6 +17,9 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    #instantiate a player
+    player = Player(int(SCREEN_WIDTH / 2), int(SCREEN_HEIGHT / 2))
+
     while True:
         #Calling LogState
         log_state()
@@ -31,6 +34,7 @@ def main():
 
         #flip refreshes screen
         pygame.display.flip()
+        player.draw(screen)
 
         #Doing Clock Ticks
         dt = clock.tick(60)/1000
