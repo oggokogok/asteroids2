@@ -1,5 +1,6 @@
 import pygame
 import constants
+import player
 from logger import log_state
 
 version = pygame.version.ver
