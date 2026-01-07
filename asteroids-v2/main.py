@@ -1,6 +1,6 @@
 import pygame
 import constants
-import player
+from player import Player
 from logger import log_state
 
 version = pygame.version.ver
@@ -19,7 +19,7 @@ def main():
     dt = 0
 
     #instantiate a player
-    player = Player(int(SCREEN_WIDTH / 2), int(SCREEN_HEIGHT / 2))
+    player = Player(int(width / 2), int(height / 2))
 
     while True:
         #Calling LogState
@@ -30,12 +30,16 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        
+
         #Filling screen with black
         screen.fill("black")
 
+        player.draw(screen)
+
         #flip refreshes screen
         pygame.display.flip()
-        player.draw(screen)
+        
 
         #Doing Clock Ticks
         dt = clock.tick(60)/1000
