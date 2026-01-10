@@ -25,12 +25,12 @@ def main():
     #Adding items to groups
     Player.containers = (updatable, drawable)
     Asteroid.container = (asteroids,updatable,drawable)
-    AsteroidField.container = (updatable)
+    AsteroidField.containers = (updatable)
 
     #creating clock and variable
     clock = pygame.time.Clock()
     dt = 0
-    
+
     #creating asteroid field object
     ast_field = AsteroidField()
 
