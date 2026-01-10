@@ -14,6 +14,13 @@ def main():
     #creating display area
     screen = pygame.display.set_mode((width,height))
 
+    #creating groups, blank atm
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    #Adding items to groups
+    Player.containers = (updatable, drawable)
+
     #creating clock and variable
     clock = pygame.time.Clock()
     dt = 0
@@ -30,12 +37,15 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        
+        #updating updatable group
+        updatable.update(dt)
 
         #Filling screen with black
         screen.fill("black")
-        player.update(dt)
-        player.draw(screen)
+        #player.update(dt)
+        #player.draw(screen)
+        for obj in drawable:
+            obj.draw(screen)
 
         #flip refreshes screen
         pygame.display.flip()
