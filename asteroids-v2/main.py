@@ -24,7 +24,7 @@ def main():
 
     #Adding items to groups
     Player.containers = (updatable, drawable)
-    Asteroid.container = (asteroids,updatable,drawable)
+    Asteroid.containers = (asteroids,updatable,drawable)
     AsteroidField.containers = (updatable)
 
     #creating clock and variable
