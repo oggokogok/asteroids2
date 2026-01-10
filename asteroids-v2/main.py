@@ -1,6 +1,8 @@
 import pygame
 import constants
 from player import Player
+from asteroid import Asteroid
+from asteroidfield import AsteroidField
 from logger import log_state
 
 version = pygame.version.ver
@@ -17,13 +19,20 @@ def main():
     #creating groups, blank atm
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
+    
 
     #Adding items to groups
     Player.containers = (updatable, drawable)
+    Asteroid.container = (asteroids,updatable,drawable)
+    AsteroidField.container = (updatable)
 
     #creating clock and variable
     clock = pygame.time.Clock()
     dt = 0
+    
+    #creating asteroid field object
+    ast_field = AsteroidField()
 
     #instantiate a player
     player = Player(int(width / 2), int(height / 2))
