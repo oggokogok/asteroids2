@@ -53,7 +53,7 @@ def main():
 
         #Checking for asteroid collision
         for obj in asteroids:
-            if obj.collision(player) == True:
+            if obj.collides_with(player) == True:
                 log_event("player_hit")
                 print('Game over!')
                 sys.exit()
