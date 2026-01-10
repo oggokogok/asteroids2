@@ -1,9 +1,11 @@
 import pygame
 import constants
+import sys
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from logger import log_state
+from logger import log_event
 
 version = pygame.version.ver
 width = constants.SCREEN_WIDTH
@@ -48,6 +50,13 @@ def main():
 
         #updating updatable group
         updatable.update(dt)
+
+        #Checking for asteroid collision
+        for obj in asteroids:
+            if obj.collision(player) == True:
+                log_event("player_hit")
+                print('Game over!')
+                sys.exit()
 
         #Filling screen with black
         screen.fill("black")
