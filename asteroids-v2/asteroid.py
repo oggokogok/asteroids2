@@ -11,5 +11,5 @@ class Asteroid(CircleShape):
         #self.position was needed as the x and y don't exist by themselves, position is created in circleshape
         pygame.draw.circle(screen,"white",self.position,self.radius,self.width)
     
-    def update(self,dt,score):
+    def update(self,dt):
         self.position += (self.velocity * dt)  
