@@ -55,10 +55,16 @@ def main():
 
         #Checking for asteroid collision
         for obj in asteroids:
+            for bullet in shots:
+                if obj.collides_with(bullet) == True:
+                    obj.kill()
+                    bullet.kill()
+                    log_event("asteroid_shot")
             if obj.collides_with(player) == True:
                 log_event("player_hit")
                 print('Game over!')
                 sys.exit()
+            
 
         #Filling screen with black
         screen.fill("black")
