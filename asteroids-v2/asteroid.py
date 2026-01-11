@@ -22,7 +22,7 @@ class Asteroid(CircleShape):
         if self.radius <= ASTEROID_MIN_RADIUS:
             return
         else:
-            log_event("asteroid_split)")
+            log_event("asteroid_split")
             angle = random.uniform(20,50)
             split1 = pygame.Vector2(self.velocity).rotate(angle)
             split2 = pygame.Vector2(self.velocity).rotate(-angle)
