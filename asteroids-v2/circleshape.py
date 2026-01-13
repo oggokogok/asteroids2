@@ -22,6 +22,8 @@ class CircleShape(pygame.sprite.Sprite):
         pass
 
     def collides_with(self, circle):
+        print(self.position)
+        # print(circle.position)
         #using built in distance to logic, using self and player that's passed
         distance = pygame.Vector2.distance_to(self.position,circle.position)
         #if the distance is less than or equal to the 2 radii summed then they're hitting
